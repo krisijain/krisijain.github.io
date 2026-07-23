@@ -416,6 +416,71 @@
       font-family: 'DM Mono', monospace;
     }
 
+    /* Certifications */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .cert-card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      background: var(--bg2);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--pink);
+      opacity: 0.5;
+    }
+    .cert-card:hover { border-color: rgba(255,110,180,0.3); background: #1e1e1b; }
+    .cert-icon {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pink);
+      background: rgba(255,110,180,0.08);
+      border: 1px solid rgba(255,110,180,0.25);
+      border-radius: 20px;
+      padding: 4px 10px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+    .cert-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .cert-issuer {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .cert-link {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .cert-link:hover { color: var(--pink); }
+    @media (max-width: 600px) {
+      .cert-grid { grid-template-columns: 1fr; }
+    }
+
     /* Contact */
     .contact-intro {
       font-size: 17px;
@@ -659,6 +724,7 @@
       <a href="#experience">experience</a>
       <a href="#projects">projects</a>
       <a href="#skills">skills</a>
+      <a href="#certifications">certifications</a>
       <a href="#education">education</a>
       <a href="#contact">contact</a>
     </div>
@@ -837,8 +903,7 @@
       <div class="tags"><span class="tag">Airflow</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">CI/CD</span></div>
     </div>
   </section>
-  
-  
+
   <!-- Certifications -->
   <section class="section" id="certifications">
     <div class="section-header">
@@ -849,23 +914,23 @@
         <span class="cert-icon">verified</span>
         <div class="cert-title">SQL (Basic)</div>
         <div class="cert-issuer">HackerRank</div>
-        <a href="https://www.hackerrank.com/certificates/66ec9551acb0" class="cert-link">view credential &nbsp;→</a>
+        <a href="#" class="cert-link">view credential &nbsp;→</a>
       </div>
       <div class="cert-card">
         <span class="cert-icon">verified</span>
         <div class="cert-title">SQL (Intermediate)</div>
         <div class="cert-issuer">HackerRank</div>
-        <a href="https://www.hackerrank.com/certificates/ea25ae4ddad1" class="cert-link">view credential &nbsp;→</a>
+        <a href="#" class="cert-link">view credential &nbsp;→</a>
       </div>
       <div class="cert-card">
         <span class="cert-icon">verified</span>
         <div class="cert-title">SQL (Advanced)</div>
         <div class="cert-issuer">HackerRank</div>
-        <a href="https://www.hackerrank.com/certificates/c4a18f161a19" class="cert-link">view credential &nbsp;→</a>
+        <a href="#" class="cert-link">view credential &nbsp;→</a>
       </div>
     </div>
   </section>
-  
+
   <!-- Education -->
   <section class="section" id="education">
     <div class="section-header">
