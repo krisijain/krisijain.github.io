@@ -72,7 +72,7 @@
       gap: 40px;
     }
     .nav-name {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -84,7 +84,7 @@
     .nav-name:hover { border-bottom-color: var(--pink); }
     .nav-links { display: flex; gap: 28px; }
     .nav-links a {
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -114,12 +114,12 @@
     }
     .edu-degree-wrap { display: flex; flex-direction: column; align-items: center; gap: 6px; }
     .edu-degree {
-      font-size: 17px;
+      font-size: 21px;
       font-weight: 700;
       color: var(--text);
     }
     .edu-school {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--pink);
       font-weight: 600;
       text-transform: uppercase;
@@ -127,7 +127,7 @@
     }
     .edu-year {
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
+      font-size: 13px;
       color: var(--hint);
     }
     .edu-body {
@@ -136,7 +136,7 @@
       justify-content: center;
     }
     .edu-note {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--muted);
       line-height: 1.8;
       font-weight: 400;
@@ -231,7 +231,7 @@
     .hero-stat-num {
       display: block;
       font-family: 'DM Mono', monospace;
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 700;
       line-height: 1;
       color: var(--pink);
@@ -239,7 +239,7 @@
     .hero-stat-label {
       display: block;
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--hint);
@@ -250,47 +250,62 @@
     }
 
     .hero h1 {
-      font-size: clamp(48px, 8vw, 100px);
+      font-size: clamp(36px, 6vw, 68px);
       font-weight: 800;
-      line-height: 0.95;
-      letter-spacing: -0.03em;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
       margin-bottom: 32px;
     }
-    .hero h1 .name-line { display: block; color: var(--text); }
+    .hero h1 .name-line {
+      display: inline;
+      color: var(--text);
+      font-weight: 800;
+    }
     .hero h1 .italic-line {
-      display: block;
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-weight: 400;
+      display: inline;
       color: var(--pink);
-      font-size: 0.85em;
     }
 
     .hero-desc {
-      font-size: 17px;
+      font-size: 19px;
       color: var(--muted);
       line-height: 1.7;
       max-width: 520px;
       margin: 0 auto 36px;
       font-weight: 400;
     }
-    .hero-links { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .hero-links { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    .hero-social-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin: 4px 0 0;
+    }
     .hero-link {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 10px 22px;
+      padding: 12px 22px;
       border-radius: 4px;
       border: 1px solid;
+      min-width: 210px;
       transition: all 0.2s, transform 0.2s;
     }
     .hero-link:hover { transform: translateY(-2px); }
-    .hero-link.primary { background: var(--pink); color: #fdfcfa; border-color: var(--pink); }
+    .hero-link.primary {
+      background: var(--pink);
+      color: #fdfcfa;
+      border-color: var(--pink);
+      font-weight: 700;
+    }
     .hero-link.primary:hover { background: transparent; color: var(--pink); }
     .hero-link.secondary { color: var(--muted); border-color: var(--border); background: transparent; }
     .hero-link.secondary:hover { color: var(--text); border-color: var(--muted); }
@@ -315,7 +330,7 @@
       align-items: center;
       text-align: center;
       gap: 4px;
-      margin-bottom: 48px;
+      margin-bottom: 36px;
     }
     .section-header::after {
       content: '';
@@ -325,7 +340,7 @@
       margin-top: 10px;
     }
     .section-title {
-      font-size: clamp(28px, 4vw, 44px);
+      font-size: clamp(30px, 4.5vw, 48px);
       font-weight: 800;
       letter-spacing: -0.02em;
       color: var(--text);
@@ -335,13 +350,13 @@
     }
 
     /* Experience */
-    .exp-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; font-weight: 400; max-width: 640px; }
+    .exp-desc { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 12px; font-weight: 400; max-width: 640px; }
 
     /* Tags */
     .tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .tag {
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
+      font-size: 13px;
       padding: 3px 10px;
       background: rgba(181,86,47,0.06);
       color: var(--pink);
@@ -362,7 +377,7 @@
     .skill-row:last-child { border-bottom: none; }
     .skill-row .tags { justify-content: center; }
     .skill-cat {
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -397,7 +412,7 @@
     .cert-card:hover { border-color: rgba(181,86,47,0.3); background: #ece9e2; }
     .cert-icon {
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
@@ -410,20 +425,20 @@
       margin-bottom: 16px;
     }
     .cert-title {
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--text);
       margin-bottom: 6px;
     }
     .cert-issuer {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--muted);
       font-weight: 400;
       margin-bottom: 16px;
     }
     .cert-link {
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
+      font-size: 13px;
       font-weight: 700;
       color: var(--pink);
       text-decoration: underline;
@@ -433,13 +448,37 @@
       transition: text-decoration-color 0.2s;
     }
     .cert-link:hover { text-decoration-color: var(--pink); }
+    .icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      transition: color 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .icon-link svg { width: 17px; height: 17px; fill: currentColor; }
+    .icon-link:hover { color: var(--pink); border-color: var(--pink); transform: translateY(-2px); }
+    .icon-link.labeled {
+      width: auto;
+      height: auto;
+      border-radius: 4px;
+      padding: 8px 16px;
+      gap: 8px;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .icon-link.labeled svg { width: 15px; height: 15px; }
     @media (max-width: 600px) {
       .cert-grid { grid-template-columns: 1fr; }
     }
 
     /* Contact */
     .contact-intro {
-      font-size: 17px;
+      font-size: 19px;
       color: var(--muted);
       line-height: 1.7;
       max-width: 520px;
@@ -447,9 +486,9 @@
       text-align: center;
       font-weight: 400;
     }
-    .contact-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .contact-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; align-items: center; }
     .contact-btn {
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
@@ -468,19 +507,20 @@
     /* Projects */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
       justify-content: center;
-      gap: 20px;
+      gap: 24px;
     }
     .project-card {
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 28px 24px;
+      padding: 36px 30px;
+      min-height: 280px;
       background: var(--bg2);
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       text-align: center;
       transition: border-color 0.2s, background 0.2s, transform 0.2s;
     }
@@ -490,13 +530,13 @@
       transform: translateY(-2px);
     }
     .project-title {
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--text);
       margin-bottom: 8px;
     }
     .project-desc {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--muted);
       line-height: 1.6;
       margin-bottom: 14px;
@@ -504,7 +544,7 @@
     }
     .project-status {
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--pink);
       border: 1px solid var(--pink);
@@ -520,6 +560,8 @@
 
     /* Career progression */
     .pwc-block {
+      max-width: 680px;
+      margin: 0 auto;
       border: 1px solid var(--border);
       border-radius: 8px;
       overflow: hidden;
@@ -529,20 +571,20 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 8px;
-      padding: 24px 28px;
+      gap: 6px;
+      padding: 16px 28px;
       background: var(--bg2);
       border-bottom: 1px solid var(--border);
     }
     .pwc-company {
-      font-size: 17px;
+      font-size: 21px;
       font-weight: 700;
       color: var(--text);
       letter-spacing: 0.02em;
     }
     .pwc-tenure {
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
+      font-size: 13px;
       color: var(--hint);
       margin-top: 4px;
     }
@@ -550,21 +592,21 @@
       padding: 8px 0;
     }
     .pwc-role {
-      padding: 24px 28px;
+      padding: 16px 28px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    .pwc-role-body { max-width: 640px; }
+    .pwc-role-body { max-width: 540px; }
     .pwc-role--current .pwc-role-body {
       background: rgba(181,86,47,0.04);
       border: 1px solid rgba(181,86,47,0.15);
       border-radius: 6px;
-      padding: 20px;
+      padding: 14px 18px;
     }
     .pwc-role-title {
-      font-size: 16px;
+      font-size: 20px;
       font-weight: 700;
       color: var(--text);
       margin-bottom: 4px;
@@ -572,7 +614,7 @@
     .pwc-role--current .pwc-role-title { color: var(--pink); }
     .pwc-role-date {
       font-family: 'DM Mono', monospace;
-      font-size: 11px;
+      font-size: 13px;
       color: var(--hint);
       margin-bottom: 12px;
     }
@@ -592,7 +634,7 @@
     }
     .promo-label {
       font-family: 'DM Mono', monospace;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       color: var(--pink);
       opacity: 0.8;
@@ -603,7 +645,7 @@
 
     /* Footer */
     footer { max-width: 1100px; margin: 0 auto; padding: 28px 40px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
-    footer p { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--hint); }
+    footer p { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--hint); }
     footer .footer-pink { color: var(--pink); }
 
     /* Animations */
@@ -659,14 +701,24 @@
       </div>
       <div class="hero-content">
         <h1>
-          <span class="name-line">Krisi Jain</span>
-          <span class="italic-line">makes data useful.</span>
+          <span class="name-line">Hi, I'm</span>
+          <span class="italic-line">Krisi Jain.</span>
         </h1>
-        <p class="hero-desc">Data engineer with almost four years of experience building workflows that turn messy data into something people can actually trust and act on.</p>
+        <p class="hero-desc">I'm a Data Engineer with nearly 4 years of experience at PwC, building pipelines and platforms that make data reliable, accessible, and ready for analytics and data-driven products.</p>
         <div class="hero-links">
-        <a href="https://linkedin.com/in/krisi-jain" target="_blank" rel="noopener" class="hero-link secondary">linkedin</a>
-        <a href="mailto:krisijain17@email.com" class="hero-link primary">get in touch</a>
-        <a href="https://github.com/krisijain" target="_blank" rel="noopener" class="hero-link secondary">github</a>
+        <a href="#projects" class="hero-link primary">view my work</a>
+        <p class="hero-social-label">or find me on</p>
+        <div style="display:flex; gap:12px; justify-content:center; align-items:center;">
+          <a href="mailto:krisijain17@email.com" class="icon-link" aria-label="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1.2 2 7.3 6.1a1 1 0 0 0 1 0L19.8 7H4.2ZM4 8.7V18h16V8.7l-6.9 5.7a3 3 0 0 1-3.2 0L4 8.7Z"/></svg>
+          </a>
+          <a href="https://github.com/krisijain" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.7.5.7 5.6.7 12c0 5.1 3.3 9.4 7.9 11 .6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.2.5-2.3 1.1-3.1-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 1.1a10.5 10.5 0 0 1 5.6 0c2.1-1.4 3-1.1 3-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.6 7.9-5.9 7.9-11C23.3 5.6 18.3.5 12 .5Z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/krisi-jain" target="_blank" rel="noopener" class="icon-link" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.5v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7 20.4H3.5V9H7v11.4Z"/></svg>
+          </a>
+        </div>
       </div>
       </div>
     </div>
@@ -751,24 +803,31 @@
     <div class="projects-grid">
 
       <div class="project-card">
+        <div class="project-title">GitHub Events<br>(Analyzer + Copilot)</div>
+        <div class="project-desc">Public GitHub activity is scattered across millions of raw events with no easy way to query it. This turns that stream into something queryable: a lakehouse that cleans and aggregates real event data from GH Archive, plus a chat agent that explains the pipeline itself.</div>
+        <div style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-bottom:14px;">
+          <span class="tag">PySpark</span>
+          <span class="tag">dbt</span>
+          <span class="tag">Databricks</span>
+        </div>
+        <a href="https://github.com/krisijain/github-events-copilot" target="_blank" rel="noopener" class="icon-link labeled">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.7.5.7 5.6.7 12c0 5.1 3.3 9.4 7.9 11 .6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.2.5-2.3 1.1-3.1-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 1.1a10.5 10.5 0 0 1 5.6 0c2.1-1.4 3-1.1 3-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.6 7.9-5.9 7.9-11C23.3 5.6 18.3.5 12 .5Z"/></svg>
+          GitHub
+        </a>
+      </div>
+
+      <div class="project-card">
         <div class="project-title">NYT Article Pipeline</div>
-        <div class="project-desc">Resilient ingestion pipeline for the NYT Article Search API - handles pagination, rate limits, retries, and dedup; outputs analysis-ready CSVs.</div>
+        <div class="project-desc">A Python pipeline that fetches articles from the NYT Article Search API, cleans and validates them, and writes analysis-ready CSV files. It is built to practice resilient API ingestion patterns (pagination, rate-limit handling, retries, and deduplication) on a real, messy public API.</div>
         <div style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-bottom:14px;">
           <span class="tag">Python</span>
           <span class="tag">Pandas</span>
           <span class="tag">REST API</span>
         </div>
-        <a href="https://github.com/krisijain/nyt-article-pipeline" target="_blank" rel="noopener" class="cert-link">view repository</a>
-      </div>
-
-      <div class="project-card">
-        <div class="project-title">FundFlow</div>
-        <div class="project-desc">Batch pipeline ingesting daily NAV data for 300+ Indian mutual funds - loaded to BigQuery, transformed with dbt, visualized in a live Streamlit dashboard.</div>
-        <div style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center;">
-          <span class="tag">Python</span>
-          <span class="tag">dbt</span>
-          <span class="tag">Streamlit</span>
-        </div>
+        <a href="https://github.com/krisijain/nyt-article-pipeline" target="_blank" rel="noopener" class="icon-link labeled">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.7.5.7 5.6.7 12c0 5.1 3.3 9.4 7.9 11 .6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.2.5-2.3 1.1-3.1-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 1.1a10.5 10.5 0 0 1 5.6 0c2.1-1.4 3-1.1 3-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.6 7.9-5.9 7.9-11C23.3 5.6 18.3.5 12 .5Z"/></svg>
+          GitHub
+        </a>
       </div>
 
     </div>
@@ -847,7 +906,15 @@
     </div>
     <p class="contact-intro">Always happy to connect, exchange ideas, and chat about data, careers, technology, or anything in between.</p>
     <div class="contact-buttons">
-      <a href="mailto:krisijain17@email.com" class="contact-btn primary">say hello</a>
+      <a href="mailto:krisijain17@email.com" class="icon-link" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1.2 2 7.3 6.1a1 1 0 0 0 1 0L19.8 7H4.2ZM4 8.7V18h16V8.7l-6.9 5.7a3 3 0 0 1-3.2 0L4 8.7Z"/></svg>
+      </a>
+      <a href="https://github.com/krisijain" target="_blank" rel="noopener" class="icon-link" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.7.5.7 5.6.7 12c0 5.1 3.3 9.4 7.9 11 .6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.2.5-2.3 1.1-3.1-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 1.1a10.5 10.5 0 0 1 5.6 0c2.1-1.4 3-1.1 3-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.6 7.9-5.9 7.9-11C23.3 5.6 18.3.5 12 .5Z"/></svg>
+      </a>
+      <a href="https://linkedin.com/in/krisi-jain" target="_blank" rel="noopener" class="icon-link" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.2V9h3.5v1.6h.1c.5-.9 1.7-1.9 3.4-1.9 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7 20.4H3.5V9H7v11.4Z"/></svg>
+      </a>
     </div>
   </section>
 
