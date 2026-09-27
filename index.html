@@ -424,7 +424,17 @@
       align-items: center;
       justify-content: flex-start;
       text-align: center;
+      position: relative;
+      overflow: hidden;
       transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--pink);
+      opacity: 0.5;
     }
     .project-card:hover {
       border-color: rgba(181,86,47,0.3);
@@ -448,89 +458,105 @@
       .projects-grid { grid-template-columns: 1fr; }
     }
 
-    /* Career progression */
-    .pwc-block {
-      max-width: 680px;
+    /* Work timeline */
+    .timeline {
+      position: relative;
+      max-width: 820px;
       margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: var(--border);
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      display: flex;
+      margin-bottom: 40px;
+    }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item:nth-child(odd) { justify-content: flex-end; }
+    .timeline-item:nth-child(even) { justify-content: flex-start; }
+    .timeline-content {
+      width: calc(50% - 32px);
+      min-width: 0;
+      max-width: 100%;
+      text-align: left;
       border: 1px solid var(--border);
       border-radius: 8px;
+      background: var(--bg2);
+      padding: 16px 20px;
+      position: relative;
       overflow: hidden;
     }
-    .pwc-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 6px;
-      padding: 16px 28px;
-      background: var(--bg2);
-      border-bottom: 1px solid var(--border);
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 3px;
+      background: var(--pink);
+      opacity: 0.5;
     }
-    .pwc-company {
-      font-size: 21px;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: 0.02em;
+    .timeline-item--current .timeline-content::before { opacity: 1; }
+    .timeline-item:nth-child(even) .timeline-content { text-align: right; }
+    .timeline-item:nth-child(even) .tags { justify-content: flex-end; }
+    .timeline-item .tags { justify-content: flex-start; }
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 5px;
+      transform: translateX(-50%);
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--bg);
+      z-index: 1;
     }
-    .pwc-tenure {
-      font-family: 'DM Mono', monospace;
-      font-size: 13px;
-      color: var(--hint);
-      margin-top: 4px;
+    .timeline-item--current .timeline-dot {
+      background: var(--pink);
+      border-color: var(--pink);
     }
-    .pwc-timeline {
-      padding: 8px 0;
-    }
-    .pwc-role {
-      padding: 16px 28px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .pwc-role-body { max-width: 540px; }
-    .pwc-role--current .pwc-role-body {
-      background: rgba(181,86,47,0.04);
-      border: 1px solid rgba(181,86,47,0.15);
-      border-radius: 6px;
-      padding: 14px 18px;
-    }
-    .pwc-role-title {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-    .pwc-role--current .pwc-role-title { color: var(--pink); }
-    .pwc-role-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 13px;
-      color: var(--hint);
-      margin-bottom: 12px;
-    }
-
-    /* Promotion badge between roles */
-    .promo-badge {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 0 28px;
-      margin: 4px 0;
-    }
-    .promo-line {
-      flex: 1;
-      height: 1px;
-      background: rgba(181,86,47,0.25);
-    }
-    .promo-label {
+    .timeline-date {
       font-family: 'DM Mono', monospace;
       font-size: 12px;
+      color: var(--hint);
+      margin-bottom: 2px;
+    }
+    .timeline-title {
+      font-size: 18px;
       font-weight: 700;
-      color: var(--pink);
-      opacity: 0.8;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .timeline-item--current .timeline-title { color: var(--pink); }
+    .timeline-company {
+      font-size: 12px;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      white-space: nowrap;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .timeline-item--current .timeline-company { color: var(--pink); }
+    .timeline-item .exp-desc { margin: 0 0 10px; max-width: none; }
+    @media (max-width: 700px) {
+      .timeline { padding-left: 28px; }
+      .timeline::before { left: 5px; transform: none; }
+      .timeline-item { display: block; margin-bottom: 32px; }
+      .timeline-content { width: auto; }
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content {
+        text-align: left;
+      }
+      .timeline-item:nth-child(odd) .tags,
+      .timeline-item:nth-child(even) .tags { justify-content: flex-start; }
+      .timeline-dot { left: -28px; top: 5px; transform: none; }
     }
 
     /* Footer */
@@ -554,7 +580,6 @@
       .hero { padding: 90px 20px 50px; }
       .section { padding: 56px 20px; }
       .edu-header { padding: 20px; }
-      .pwc-header { flex-wrap: wrap; gap: 10px; }
       footer { flex-direction: column; gap: 8px; text-align: center; padding: 24px 20px; }
     }
   </style>
@@ -584,7 +609,7 @@
           <span class="name-line">Hi, I'm</span>
           <span class="italic-line">Krisi Jain.</span>
         </h1>
-        <p class="hero-desc">I'm a Data Engineer with nearly 4 years of experience at PwC, building pipelines and platforms that make data reliable, accessible, and ready for analytics and data-driven products.</p>
+        <p class="hero-desc">I'm a Data Engineer with almost four years at PwC building production pipelines in Python, SQL, and Spark, along with the validation, monitoring, and alerting around them. Now I'm at a private markets exchange, working on the analytics warehouse and the infrastructure under it, built with dbt, Airflow, and Terraform.</p>
         <div class="hero-links">
         <a href="#projects" class="hero-link primary">view my work</a>
         <p class="hero-social-label">or find me on</p>
@@ -607,71 +632,63 @@
   <!-- Experience -->
   <section class="section" id="experience" style="border-top: none;">
     <div class="section-header">
-      <h2 class="section-title">work <span>history</span></h2>
+      <h2 class="section-title">work <span>experience</span></h2>
     </div>
 
-    <!-- PwC block -->
-    <div class="pwc-block">
-      <div class="pwc-header">
-        <div>
-          <div class="pwc-company">PwC India</div>
-          <div class="pwc-tenure">Aug 2022 – Apr 2026</div>
+    <div class="timeline">
+
+      <div class="timeline-item timeline-item--current">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">Sep 2026 – Present</div>
+          <div class="timeline-title">Data Engineer</div>
+          <div class="timeline-company">Alta Alternative Investments</div>
+          <div class="exp-desc">Building pipelines for the analytics warehouse, with Terraform and GitHub Actions for infrastructure and CI, and integrating third-party vendor data feeds.</div>
+          <div class="tags">
+            <span class="tag">dbt</span><span class="tag">Airflow</span><span class="tag">Terraform</span><span class="tag">GitHub Actions</span>
+          </div>
         </div>
       </div>
 
-      <div class="pwc-timeline">
-
-        <!-- Role 3 (most recent) -->
-        <div class="pwc-role pwc-role--current">
-          <div class="pwc-role-body">
-            <div class="pwc-role-title">Data Engineer, Associate</div>
-            <div class="pwc-role-date">Apr 2025 - Apr 2026</div>
-            <div class="exp-desc" style="margin-left:auto; margin-right:auto; text-align:center;">Built and maintained real-time and batch pipelines processing 1M+ customer consent records for a centralised marketing permissions platform, ensuring accurate opt-in/opt-out tracking across systems at scale.</div>
-            <div class="tags" style="margin-top:12px; justify-content:center;">
-              <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">AWS</span><span class="tag">PySpark</span><span class="tag">Azure Databricks</span>
-            </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">Apr 2025 – Apr 2026</div>
+          <div class="timeline-title">Associate, Data Engineering</div>
+          <div class="timeline-company">PwC India</div>
+          <div class="exp-desc">Built and maintained real-time and batch pipelines processing 1M+ customer consent records for a centralised marketing permissions platform, ensuring accurate opt-in/opt-out tracking across systems at scale.</div>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">AWS</span><span class="tag">PySpark</span><span class="tag">Azure Databricks</span>
           </div>
         </div>
-
-        <!-- Promotion badge -->
-        <div class="promo-badge">
-          <span class="promo-line"></span>
-          <span class="promo-label">↑</span>
-          <span class="promo-line"></span>
-        </div>
-
-        <!-- Role 2 -->
-        <div class="pwc-role">
-          <div class="pwc-role-body">
-            <div class="pwc-role-title">Data Engineer, Senior Analyst</div>
-            <div class="pwc-role-date">Apr 2024 - Mar 2025</div>
-            <div class="exp-desc" style="margin-left:auto; margin-right:auto; text-align:center;">Developed data pipelines for a cloud cost optimisation platform, analysing large-scale compute usage data to identify efficiency opportunities and support informed infrastructure decisions.</div>
-            <div class="tags" style="margin-top:12px; justify-content:center;">
-              <span class="tag">Python</span><span class="tag">SQL</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Promotion badge -->
-        <div class="promo-badge">
-          <span class="promo-line"></span>
-          <span class="promo-label">↑</span>
-          <span class="promo-line"></span>
-        </div>
-
-        <!-- Role 1 -->
-        <div class="pwc-role">
-          <div class="pwc-role-body">
-            <div class="pwc-role-title">Data Engineer, Analyst</div>
-            <div class="pwc-role-date">Aug 2022 - Mar 2024</div>
-            <div class="exp-desc" style="margin-left:auto; margin-right:auto; text-align:center;">Contributed to a low-code data integration platform, building core pipeline components that enabled users to create and manage ETL workflows through a visual interface.</div>
-            <div class="tags" style="margin-top:12px; justify-content:center;">
-              <span class="tag">Python</span><span class="tag">SQL</span>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">Apr 2024 – Mar 2025</div>
+          <div class="timeline-title">Senior Analyst, Data Engineering</div>
+          <div class="timeline-company">PwC India</div>
+          <div class="exp-desc">Developed data pipelines for a cloud cost optimisation platform, analysing large-scale compute usage data to identify efficiency opportunities and support informed infrastructure decisions.</div>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-date">Aug 2022 – Mar 2024</div>
+          <div class="timeline-title">Analyst, Data Engineering</div>
+          <div class="timeline-company">PwC India</div>
+          <div class="exp-desc">Contributed to a low-code data integration platform, building core pipeline components that enabled users to create and manage ETL workflows through a visual interface.</div>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">SQL</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -720,19 +737,19 @@
     </div>
     <div class="skill-row">
       <span class="skill-cat">languages</span>
-      <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span></div>
+      <div class="tags"><span class="tag">Python (Pandas, NumPy)</span><span class="tag">SQL</span></div>
     </div>
     <div class="skill-row">
       <span class="skill-cat">data engineering</span>
-      <div class="tags"><span class="tag">Apache Spark (PySpark)</span><span class="tag">Apache Kafka</span><span class="tag">ETL/ELT</span><span class="tag">Data Modeling</span><span class="tag">Data Warehousing</span></div>
+      <div class="tags"><span class="tag">Apache Spark (PySpark)</span><span class="tag">Apache Kafka</span><span class="tag">dbt</span><span class="tag">Delta Lake</span><span class="tag">Medallion Architecture</span><span class="tag">ETL/ELT</span><span class="tag">Data Modeling</span><span class="tag">Data Warehousing</span></div>
     </div>
     <div class="skill-row">
       <span class="skill-cat">cloud</span>
-      <div class="tags"><span class="tag">AWS</span><span class="tag">Databricks</span></div>
+      <div class="tags"><span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Databricks</span></div>
     </div>
     <div class="skill-row">
       <span class="skill-cat">orchestration & devops</span>
-      <div class="tags"><span class="tag">Airflow</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">CI/CD</span></div>
+      <div class="tags"><span class="tag">Airflow</span><span class="tag">Terraform</span><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span><span class="tag">Jenkins</span><span class="tag">Jira</span><span class="tag">Streamlit</span></div>
     </div>
   </section>
 
